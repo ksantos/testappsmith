@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "6746c2726e35623151eaf256_22166848-2b7b-4897-8e94-56faff7e82a1",
-  "id": "Page1_Insert_movies1",
+  "gitSyncId": "6746c2726e35623151eaf256_7ca1b249-c303-4b17-98ae-bd51dcc88388",
+  "id": "paginaPrincipal_Total_record_movies1",
   "pluginId": "mongo-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -19,7 +19,12 @@
           "data": "movies"
         },
         "command": {
-          "data": "INSERT"
+          "data": "COUNT"
+        },
+        "count": {
+          "query": {
+            "data": "{{{ poster_path: {$regex: tablaPrincipal.searchText} }}}"
+          }
         },
         "delete": {
           "limit": {
@@ -35,11 +40,6 @@
           },
           "sort": {
             "data": "{\"_id\": 1}"
-          }
-        },
-        "insert": {
-          "documents": {
-            "data": "{{(Table1.newRow || {})}}"
           }
         },
         "smartSubstitution": {
@@ -63,12 +63,12 @@
     },
     "dynamicBindingPathList": [
       {
-        "key": "formData.insert.documents.data"
+        "key": "formData.count.query.data"
       }
     ],
-    "executeOnLoad": false,
-    "name": "Insert_movies1",
-    "pageId": "Page1",
+    "executeOnLoad": true,
+    "name": "Total_record_movies1",
+    "pageId": "paginaPrincipal",
     "userSetOnLoad": false
   }
 }

@@ -1,6 +1,6 @@
 {
   "gitSyncId": "6746c2726e35623151eaf256_184c5176-ba9b-4580-a0df-6e935b31cd4e",
-  "id": "Page1_Update_movies1",
+  "id": "paginaPrincipal_Update_movies1",
   "pluginId": "mongo-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -45,10 +45,10 @@
             "data": "SINGLE"
           },
           "query": {
-            "data": "{_id: ObjectId('{{Table1.updatedRow._id}}')}"
+            "data": "{_id: ObjectId('{{tablaPrincipal.updatedRow._id}}')}"
           },
           "update": {
-            "data": "{{{$set: _.omit(Table1.updatedRow, \"_id\")}}}"
+            "data": "{{{$set: _.omit(tablaPrincipal.updatedRow, \"_id\")}}}"
           }
         }
       },
@@ -72,7 +72,7 @@
     ],
     "executeOnLoad": false,
     "name": "Update_movies1",
-    "pageId": "Page1",
+    "pageId": "paginaPrincipal",
     "userSetOnLoad": false
   }
 }

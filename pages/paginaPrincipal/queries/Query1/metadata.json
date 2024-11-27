@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "6746c2726e35623151eaf256_ac384f74-cae1-487a-8617-0d4f79d37ea4",
-  "id": "Page1_Find_movies1",
+  "gitSyncId": "6746c2726e35623151eaf256_4434c6e1-9598-4154-9d6b-cfc30cb00329",
+  "id": "paginaPrincipal_Query1",
   "pluginId": "mongo-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -28,16 +28,13 @@
         },
         "find": {
           "limit": {
-            "data": "{{Table1.pageSize}}"
+            "data": "10"
           },
           "query": {
-            "data": "{{{ poster_path: {$regex: Table1.searchText, '$options' : 'i'} }}}"
-          },
-          "skip": {
-            "data": "{{Table1.pageOffset}}"
+            "data": "{ \"homepage\": \"https://movies.disney.com/cruella\"}"
           },
           "sort": {
-            "data": "{{ Table1.sortOrder.column ? { [Table1.sortOrder.column]: Table1.sortOrder.order !== \"desc\" ? 1 : -1 } : {}}}"
+            "data": "{\"_id\": 1}"
           }
         },
         "smartSubstitution": {
@@ -59,23 +56,9 @@
       "name": "movies",
       "pluginId": "mongo-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "formData.find.skip.data"
-      },
-      {
-        "key": "formData.find.query.data"
-      },
-      {
-        "key": "formData.find.sort.data"
-      },
-      {
-        "key": "formData.find.limit.data"
-      }
-    ],
-    "executeOnLoad": true,
-    "name": "Find_movies1",
-    "pageId": "Page1",
+    "executeOnLoad": false,
+    "name": "Query1",
+    "pageId": "paginaPrincipal",
     "userSetOnLoad": false
   }
 }
